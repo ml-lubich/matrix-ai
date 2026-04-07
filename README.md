@@ -1,5 +1,7 @@
 # matrix-ai
 
+**Status — pre-release:** This is an **experimental v0.x** build. Behavior and schemas may change without notice. Automated coverage is **limited**; do not treat outputs as production-ready compliance or safety guarantees—validate in your own environment.
+
 Local lab for **inspectable AI outputs**: generate a candidate answer with [MiniMax](https://platform.minimax.io/docs/api-reference/text-chat) (`M2-her`), then run a **structured equity / terminology audit** with JSON validation and an optional HTML report.
 
 Optional local clones (not tracked in this repo; avoids broken nested-git commits):

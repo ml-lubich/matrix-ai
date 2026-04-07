@@ -1,6 +1,7 @@
 {
   "name": "matrix-ai",
-  "version": "0.1.0",
+  "version": "0.1.0-pre.1",
+  "description": "Pre-release/experimental: MiniMax-backed CLI for generation plus structured equity-oriented audit traces (not production-certified).",
   "private": true,
   "type": "module",
   "scripts": {

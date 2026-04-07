@@ -1,5 +1,7 @@
 # Overview
 
+**Release posture:** The project is **pre-1.0 and not fully validated** for production. Treat it as experimental research tooling until an explicit stable release and expanded test/operational evidence exist.
+
 **matrix-ai** is a small transparency toolkit: it surfaces what a text model actually returned (the “black-box” surface), augments it with **provider flags** from the MiniMax Text Chat API (for example sensitivity indicators and token use), and runs a second pass that emits a **validated JSON audit** focused on inclusive terminology and obvious exclusion patterns.
 
 This repository also vendors **reference projects** for separate concerns:
