@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+coverage/
+tmp/
+
+# Upstream clones carry their own .git; re-clone or use submodules instead of embedding.
+Ix/
+mcp-atom-of-thoughts/

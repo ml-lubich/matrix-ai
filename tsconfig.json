@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "types": ["bun-types"],
+    "rootDir": ".",
+    "outDir": "build"
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"]
+}
