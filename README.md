@@ -36,6 +36,7 @@ flowchart LR
 - [Optional local clones](#optional-local-clones)
 - [Quick start](#quick-start)
 - [Security](#security)
+- [🗺️ Repository map](#️-repository-map)
 
 ## Probe pipeline (algorithm)
 
@@ -107,3 +108,52 @@ Authoritative product intent lives in `docs/`. Tests are scoped to this repo via
 ## Security
 
 Never commit `.env`. If a key was pasted into chat or logs, **rotate** it in the MiniMax console.
+
+
+## 🗺️ Repository map
+
+Top-level layout of `matrix-ai` rendered as a Mermaid mindmap (auto-generated from the on-disk tree).
+
+```mermaid
+mindmap
+  root((matrix-ai))
+    Ix/
+      CLAUDE.md
+      CONTRIBUTING.md
+      Formula
+      LICENSE
+      NOTICE
+      README.md
+    docs/
+      API.md
+      ARCHITECTURE.md
+      DEPLOYMENT.md
+      DESIGN.md
+      OVERVIEW.md
+      REQUIREMENTS.md
+    mcp-atom-of-thoughts/
+      CHANGELOG.md
+      CLAUDE.md
+      CONTRIBUTING.md
+      Dockerfile
+      LICENSE
+      README.md
+    src/
+      cli.ts
+      env.ts
+      minimax
+      probe
+      viz
+    tests/
+      audit-schema.test.ts
+      minimax-client.test.ts
+      run-probe.test.ts
+    tmp/
+      probe-out.html
+      probe-out.json
+      probe-out2.json
+    files
+      README.md
+      package.json
+      tsconfig.json
+```
