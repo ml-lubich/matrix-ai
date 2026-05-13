@@ -31,9 +31,55 @@ flowchart LR
 
 ## Table of contents
 
-- [Quick start](#quick-start)
+- [Probe pipeline (algorithm)](#probe-pipeline-algorithm)
+- [Audit sequence](#audit-sequence)
 - [Optional local clones](#optional-local-clones)
+- [Quick start](#quick-start)
 - [Security](#security)
+
+## Probe pipeline (algorithm)
+
+```mermaid
+flowchart LR
+    A([bun run probe --task X])
+    B["load .env<br/>MINIMAX_API_TOKEN"]
+    C["generate<br/>MiniMax M2-her"]
+    D["build audit prompt<br/>equity + terminology"]
+    E["audit call<br/>MiniMax M2-her"]
+    F["Zod validate JSON"]
+    G{"valid?"}
+    H["write report.json"]
+    I["render report.html"]
+    R["retry with stricter prompt"]
+    Z([done])
+    A --> B --> C --> D --> E --> F --> G
+    G -- yes --> H --> I --> Z
+    G -- no  --> R --> E
+```
+
+## Audit sequence
+
+```mermaid
+sequenceDiagram
+    participant U as user
+    participant CLI as src/cli.ts
+    participant G as generate
+    participant A as audit
+    participant MM as MiniMax
+    participant Z as Zod schema
+
+    U->>CLI: --task prompt
+    CLI->>G: generate(prompt)
+    G->>MM: chat completion
+    MM-->>G: candidate answer
+    CLI->>A: audit(candidate)
+    A->>MM: structured-output prompt
+    MM-->>A: JSON
+    A->>Z: parse(json)
+    Z-->>A: typed report | error
+    A-->>CLI: report
+    CLI-->>U: report.json + report.html
+```
 
 ## Optional local clones
 
