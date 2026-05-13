@@ -4,7 +4,40 @@
 
 Local lab for **inspectable AI outputs**: generate a candidate answer with [MiniMax](https://platform.minimax.io/docs/api-reference/text-chat) (`M2-her`), then run a **structured equity / terminology audit** with JSON validation and an optional HTML report.
 
-Optional local clones (not tracked in this repo; avoids broken nested-git commits):
+```mermaid
+flowchart LR
+    USER(("👤<br/>--task prompt"))
+    CLI{{"💻 src/cli.ts<br/>bun run probe"}}
+    GEN["✨ generate<br/>MiniMax M2-her"]
+    AUDIT["🔍 audit<br/>equity / terminology<br/>+ Zod JSON"]
+    MM(("🤖 MiniMax"))
+    JSON[/"🧾 report.json"/]
+    HTML[/"🌐 report.html"/]
+
+    USER --> CLI --> GEN --> MM
+    GEN --> AUDIT --> MM
+    AUDIT --> JSON
+    AUDIT --> HTML
+
+    classDef io fill:#0e1116,stroke:#2f81f7,stroke-width:1.5px,color:#e6edf3;
+    classDef brain fill:#161b22,stroke:#d29922,stroke-width:1.5px,color:#e6edf3;
+    classDef tool fill:#161b22,stroke:#3fb950,stroke-width:1.5px,color:#e6edf3;
+    classDef out fill:#0e1116,stroke:#a371f7,stroke-width:1.5px,color:#e6edf3;
+    class USER,MM io;
+    class CLI brain;
+    class GEN,AUDIT tool;
+    class JSON,HTML out;
+```
+
+## Table of contents
+
+- [Quick start](#quick-start)
+- [Optional local clones](#optional-local-clones)
+- [Security](#security)
+
+## Optional local clones
+
+Not tracked in this repo (avoids broken nested-git commits):
 
 ```bash
 git clone git@github.com:dioptx/mcp-atom-of-thoughts.git mcp-atom-of-thoughts
