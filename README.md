@@ -37,6 +37,7 @@ flowchart LR
 - [Quick start](#quick-start)
 - [Security](#security)
 - [🗺️ Repository map](#️-repository-map)
+- [📊 Code composition](#-code-composition)
 
 ## Probe pipeline (algorithm)
 
@@ -156,4 +157,21 @@ mindmap
       README.md
       package.json
       tsconfig.json
+```
+
+
+## 📊 Code composition
+
+File-type breakdown of source under this repo (skips `.git`, `node_modules`, build caches, lockfiles).
+
+```mermaid
+pie showData title File-type composition of matrix-ai (221 files)
+    "TypeScript" : 152
+    "Markdown" : 17
+    "Other" : 17
+    "JSON" : 12
+    "Shell" : 12
+    "Image" : 5
+    "JavaScript" : 4
+    "YAML" : 2
 ```
